@@ -1,5 +1,7 @@
 package sample;
 
+import javafx.collections.ObservableList;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -59,7 +61,7 @@ public class Courses {
         return courseList;
     }
 
-    public void quickSort(ArrayList<CourseOffering> arr, int left, int right) {
+    public void quickSort(ObservableList<CourseOffering> arr, int left, int right) {
         int index = divideAndConquer(arr, left, right);
         if (left < index - 1)
             quickSort(arr, left, index - 1);
@@ -67,7 +69,7 @@ public class Courses {
             quickSort(arr, index, right);
     }
 
-    public int divideAndConquer(ArrayList<CourseOffering> arr, int left, int right)
+    public int divideAndConquer(ObservableList<CourseOffering> arr, int left, int right)
     {
         int i = left, j = right;
         int pivot = arr.get((left + right) / 2).getCourseNumber();
@@ -87,7 +89,7 @@ public class Courses {
         return i;
     }
 
-    public void swap(ArrayList<CourseOffering> arrayList, int i, int j) {
+    public void swap(ObservableList<CourseOffering> arrayList, int i, int j) {
         Collections.swap(arrayList, i, j);
 //        CourseOffering temp = arrayList.get(i);
 //        arrayList.set(i, arrayList.get(j));
